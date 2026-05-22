@@ -1,0 +1,283 @@
+/* ============================================================
+   SEAL TEAM SIX — Design Tokens + Base Styles
+   Tactical-premium. Asphalt-black + safety-yellow.
+   ============================================================ */
+
+:root {
+  /* ----- COLORS ----- */
+  --asphalt-0:   #0B0B0D;   /* deepest black */
+  --asphalt-1:   #141417;   /* base black */
+  --asphalt-2:   #1C1C20;   /* raised surface */
+  --asphalt-3:   #26262B;   /* elevated card */
+  --asphalt-4:   #34343A;   /* hairline / border */
+
+  --yellow:      #FFD200;   /* safety yellow - primary accent */
+  --yellow-deep: #E5BC00;   /* hover state */
+  --yellow-soft: #FFE066;   /* highlight */
+
+  --concrete-1:  #6B7076;   /* mid gray */
+  --concrete-2:  #9AA0A6;   /* light gray */
+  --concrete-3:  #BFC4C9;   /* lightest gray */
+
+  --road-white:  #F4F4F5;   /* road-line white */
+  --hi-vis:      #C8FF00;   /* fresh-seal glow (RARE) */
+
+  --danger:      #FF3D2E;   /* hazard red */
+
+  /* ----- TYPE ----- */
+  --f-display: 'Oswald', 'Archivo Black', 'Arial Black', sans-serif;
+  --f-body:    'Inter', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --f-stencil: 'Black Ops One', 'Oswald', sans-serif;
+  --f-mono:    'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* ----- RADII / SHADOWS ----- */
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 8px;
+  --r-xl: 12px;
+
+  --sh-card:  0 10px 30px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.3);
+  --sh-cta:   0 8px 24px rgba(255, 210, 0, 0.28), 0 1px 3px rgba(0,0,0,0.4);
+  --sh-glow:  0 0 24px rgba(200, 255, 0, 0.55);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--f-body);
+  background: var(--asphalt-0);
+  color: var(--road-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ============================================================
+   Reusable surfaces + textures
+   ============================================================ */
+
+.asphalt-grain {
+  position: relative;
+  background-color: var(--asphalt-1);
+}
+.asphalt-grain::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 22% 38%, rgba(255,255,255,0.025) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 71% 12%, rgba(255,255,255,0.018) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 84% 78%, rgba(255,255,255,0.02) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 12% 88%, rgba(255,255,255,0.015) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.012) 0 1px, transparent 1.5px);
+  background-size: 6px 6px, 4px 4px, 5px 5px, 7px 7px, 3px 3px;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+/* HUD grid overlay */
+.hud-grid {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,210,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,210,0,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 80% at 50% 40%, black 30%, transparent 85%);
+}
+
+/* hazard stripes */
+.hazard {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--yellow) 0 14px,
+    var(--asphalt-0) 14px 28px
+  );
+}
+.hazard-thin {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--yellow) 0 6px,
+    var(--asphalt-0) 6px 12px
+  );
+}
+
+/* road-line dashes used as section dividers */
+.road-divider {
+  height: 14px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--yellow) 0 56px,
+    transparent 56px 96px
+  );
+  background-size: 96px 14px;
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  position: relative;
+}
+.road-divider::before, .road-divider::after {
+  content: '';
+  position: absolute; left: 0; right: 0; height: 1px;
+  background: rgba(255,210,0,0.18);
+}
+.road-divider::before { top: 0; }
+.road-divider::after  { bottom: 0; }
+
+/* animated dashes (for hero) */
+@keyframes roadLineFlow {
+  from { background-position: 0 50%; }
+  to   { background-position: -192px 50%; }
+}
+.road-flow {
+  animation: roadLineFlow 2.2s linear infinite;
+}
+
+/* targeting reticle / corner brackets */
+.brackets {
+  position: relative;
+}
+.brackets::before, .brackets::after,
+.brackets > .br-tr, .brackets > .br-br {
+  content: ''; position: absolute;
+  width: 14px; height: 14px;
+  border: 2px solid var(--yellow);
+  opacity: 0.85;
+}
+.brackets::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
+.brackets::after  { bottom: -2px; left: -2px; border-right: 0; border-top: 0; }
+.brackets > .br-tr { top: -2px; right: -2px; border-left: 0; border-bottom: 0; }
+.brackets > .br-br { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+
+/* ============================================================
+   Type utilities
+   ============================================================ */
+
+.display {
+  font-family: var(--f-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+}
+.stencil {
+  font-family: var(--f-stencil);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.mil-label {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  font-weight: 500;
+}
+.mil-label-white {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--concrete-2);
+  font-weight: 500;
+}
+
+/* ============================================================
+   Buttons / CTAs
+   ============================================================ */
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 22px;
+  font-family: var(--f-display);
+  font-weight: 700; font-size: 15px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  border: 0; cursor: pointer; text-decoration: none;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-primary {
+  background: var(--yellow);
+  color: var(--asphalt-0);
+  box-shadow: var(--sh-cta);
+  position: relative;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  padding-left: 28px; padding-right: 28px;
+}
+.btn-primary:hover { background: var(--yellow-soft); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent; color: var(--road-white);
+  border: 1.5px solid rgba(255,255,255,0.22);
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  padding-left: 28px; padding-right: 28px;
+}
+.btn-ghost:hover { border-color: var(--yellow); color: var(--yellow); }
+
+/* arrow shape used in CTAs */
+.arrow-r { width: 18px; height: 12px; display:inline-block; position:relative; }
+.arrow-r::before {
+  content:''; position:absolute; left:0; right:6px; top:50%; height:2px;
+  background: currentColor; transform: translateY(-50%);
+}
+.arrow-r::after {
+  content:''; position:absolute; right:0; top:50%; width:8px; height:8px;
+  border-top: 2px solid currentColor; border-right: 2px solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* ============================================================
+   Stencil arrow (decorative)
+   ============================================================ */
+
+.stencil-arrow {
+  display: inline-block;
+  width: 56px; height: 18px;
+  background: var(--yellow);
+  clip-path: polygon(0 35%, 60% 35%, 60% 0, 100% 50%, 60% 100%, 60% 65%, 0 65%);
+}
+
+/* ============================================================
+   Image placeholder helper (if photo missing)
+   ============================================================ */
+
+.ph {
+  background:
+    repeating-linear-gradient(135deg, var(--asphalt-3) 0 14px, var(--asphalt-2) 14px 28px);
+  color: var(--concrete-2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Form
+   ============================================================ */
+
+.field {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.field label {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--concrete-2);
+}
+.field input, .field textarea, .field select {
+  background: var(--asphalt-0);
+  border: 1px solid var(--asphalt-4);
+  color: var(--road-white);
+  padding: 14px 14px;
+  font-family: var(--f-body); font-size: 15px;
+  border-radius: 0;
+  outline: none;
+  transition: border-color .15s ease;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: var(--yellow);
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .road-flow { animation: none; }
+}

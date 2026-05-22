@@ -1,0 +1,33 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code local session state
+.claude/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Build artifacts (none expected — this is pure static)
+dist/
+.cache/
+
+# Local environment
+.env
+.env.local

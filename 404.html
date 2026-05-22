@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 · Off the Map — Seal Team Six</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .four {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 20px; position: relative; overflow: hidden;
+  }
+  .four .inner { max-width: 720px; position: relative; z-index: 1; }
+  .four h1 {
+    font-family: var(--f-display); font-weight: 700;
+    font-size: clamp(80px, 16vw, 220px);
+    color: var(--yellow); line-height: 1; letter-spacing: -.02em;
+    margin: 0 0 8px;
+  }
+  .four h2 {
+    font-family: var(--f-display); font-weight: 700;
+    font-size: clamp(28px, 4vw, 48px); margin: 0 0 16px;
+    color: var(--road-white); text-transform: uppercase; letter-spacing: -.01em;
+  }
+  .four p { color: var(--concrete-3); font-size: 16px; margin: 0 0 28px; }
+  .four .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .four .mascot { width: 220px; margin: 0 auto 12px; }
+</style>
+</head>
+<body>
+  <main class="four asphalt-grain">
+    <div class="hud-grid" aria-hidden="true"></div>
+    <div class="inner">
+      <img class="mascot" src="images/mascot-v4-600.webp" alt="Sarge saluting">
+      <div class="mil-label" style="margin-bottom:14px">STS-716 · GRID REFERENCE LOST</div>
+      <h1>404</h1>
+      <h2>Off the Map.</h2>
+      <p>That page isn't in our service area, recruit. Head back to base and pick a mission.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Back to Base <span class="arrow-r"></span></a>
+        <a class="btn btn-ghost" href="tel:7169078259">Call 716-907-8259</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
