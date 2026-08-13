@@ -1065,7 +1065,7 @@
     <button class="close" type="button" aria-label="Close chat">×</button>
   </header>
 
-  <div class="sarge-chat-view" style="display:flex;flex-direction:column;flex:1;min-height:0">
+  <div class="sarge-chat-view">
     <div class="sarge-messages" id="sarge-messages" aria-live="polite"></div>
 
     <form class="sarge-input" id="sarge-input-form">
@@ -1083,12 +1083,12 @@
     <input type="hidden" name="_subject" value="New estimate request — via Sarge chatbot">
     <input type="hidden" name="source" value="sarge-chatbot">
 
-    <div class="field"><label>Name</label><input type="text" name="name" placeholder="John Smith" required></div>
-    <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="716-555-0000" required></div>
-    <div class="field"><label>Email (optional)</label><input type="email" name="email" placeholder="you@email.com"></div>
+    <div class="field"><label for="sf-name">Name</label><input id="sf-name" type="text" name="name" placeholder="John Smith" required autocomplete="name"></div>
+    <div class="field"><label for="sf-phone">Phone</label><input id="sf-phone" type="tel" name="phone" placeholder="716-555-0000" required autocomplete="tel"></div>
+    <div class="field"><label for="sf-email">Email (optional)</label><input id="sf-email" type="email" name="email" placeholder="you@email.com" autocomplete="email"></div>
     <div class="field">
-      <label>Service</label>
-      <select name="service">
+      <label for="sf-service">Service</label>
+      <select id="sf-service" name="service">
         <option>Sealcoating</option>
         <option>Crack Filling</option>
         <option>Line Striping</option>
@@ -1098,8 +1098,8 @@
       </select>
     </div>
     <div class="field">
-      <label>Property Type</label>
-      <select name="property_type">
+      <label for="sf-property">Property Type</label>
+      <select id="sf-property" name="property_type">
         <option>Residential driveway</option>
         <option>Luxury / Estate</option>
         <option>Commercial lot</option>
@@ -1107,18 +1107,18 @@
         <option>Other</option>
       </select>
     </div>
-    <div class="field"><label>Approx Size</label><input type="text" name="approx_size" placeholder="e.g. 2-car drive, ~600 sq ft"></div>
-    <div class="field"><label>Town / ZIP</label><input type="text" name="location" placeholder="Clarence · 14031"></div>
+    <div class="field"><label for="sf-size">Approx Size</label><input id="sf-size" type="text" name="approx_size" placeholder="e.g. 2-car drive, ~600 sq ft"></div>
+    <div class="field"><label for="sf-location">Town / ZIP</label><input id="sf-location" type="text" name="location" placeholder="Clarence · 14031"></div>
     <div class="field">
-      <label>Timeline</label>
-      <select name="timeline">
+      <label for="sf-timeline">Timeline</label>
+      <select id="sf-timeline" name="timeline">
         <option>ASAP</option>
         <option>This month</option>
         <option>This season</option>
         <option>Just getting pricing</option>
       </select>
     </div>
-    <div class="field"><label>Notes (optional)</label><textarea name="notes" rows="2" placeholder="Anything else we should know?"></textarea></div>
+    <div class="field"><label for="sf-notes">Notes (optional)</label><textarea id="sf-notes" name="notes" rows="2" placeholder="Anything else we should know?"></textarea></div>
 
     <div class="form-error" role="alert"></div>
 
@@ -1139,6 +1139,7 @@
 <!-- ============================================================ SCRIPTS ============================================================ -->
 <!-- Fuse.js (fuzzy search) for the chatbot -->
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
+<script src="js/form-validate.js" defer></script>
 <script src="js/knowledge-base.js" defer></script>
 <script src="js/sarge.js" defer></script>
 <script src="js/main.js" defer></script>

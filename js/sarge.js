@@ -307,9 +307,11 @@ function backToChat() {
 /* ----------- FORMSPREE SUBMIT ----------- */
 async function submitForm(e) {
   e.preventDefault();
-  const form = e.target;
+  const form = e.currentTarget;
   const submitBtn = form.querySelector('button[type=submit]');
   const errorEl = form.querySelector('.form-error');
+
+  if (form.dataset.submitting === 'true') return;
 
   // Save draft
   const fd = new FormData(form);
@@ -319,16 +321,18 @@ async function submitForm(e) {
   // Honeypot check (anti-spam)
   if (state.formDraft._gotcha) return; // bot caught
 
-  // Validate
-  if (!state.formDraft.name || !state.formDraft.phone) {
+  // Per-field validation with focus moved to the first problem.
+  if (window.STSForms && !window.STSForms.validate(form)) {
     if (errorEl) {
       errorEl.classList.add('is-active');
-      errorEl.textContent = 'Need at least your name and a phone number, recruit.';
+      errorEl.textContent = 'Check the highlighted fields, recruit.';
     }
     return;
   }
 
   if (errorEl) errorEl.classList.remove('is-active');
+  form.dataset.submitting = 'true';
+  const originalLabel = submitBtn.innerHTML;
   submitBtn.disabled = true;
   submitBtn.textContent = 'SENDING…';
 
@@ -342,6 +346,8 @@ async function submitForm(e) {
     showSuccess();
     state.formDraft = {};
     saveState();
+    form.reset();
+    window.STSForms?.clear(form);
   } catch (err) {
     if (errorEl) {
       errorEl.classList.add('is-active');
@@ -349,8 +355,9 @@ async function submitForm(e) {
         'Submission hiccup. Call or text us directly at <a href="tel:7169078259" style="color:var(--yellow)">716-907-8259</a> or email <a href="mailto:Seal.Team.Six.Snow@gmail.com" style="color:var(--yellow)">Seal.Team.Six.Snow@gmail.com</a>.';
     }
   } finally {
+    delete form.dataset.submitting;
     submitBtn.disabled = false;
-    submitBtn.innerHTML = 'SEND TO THE CREW';
+    submitBtn.innerHTML = originalLabel;
   }
 }
 
@@ -447,10 +454,12 @@ function bindUI() {
     });
   }
 
-  // Estimate form submit
-  const eForm = document.getElementById('sarge-estimate-form');
-  if (eForm) {
-    eForm.addEventListener('submit', submitForm);
+  // Estimate form submit. The form element *is* elFormView — there has never
+  // been a separate #sarge-estimate-form, so the old lookup silently returned
+  // null and no submit handler was ever attached.
+  if (elFormView instanceof HTMLFormElement) {
+    elFormView.addEventListener('submit', submitForm);
+    window.STSForms?.watch(elFormView);
   }
 
   // Back-to-chat button in form view

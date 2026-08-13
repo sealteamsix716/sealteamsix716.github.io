@@ -1078,6 +1078,25 @@ textarea:focus-visible, select:focus-visible {
 }
 .form-error.is-active { display: block; }
 
+/* Per-field validation messages. Red on the field's own near-black ground
+   clears AA for body text. */
+.field-error {
+  margin: 0; color: var(--danger);
+  font-family: var(--f-body); font-size: 12.5px; line-height: 1.4;
+}
+.field-error[hidden] { display: none; }
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"],
+.field select[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+.field input[aria-invalid="true"]:focus,
+.field textarea[aria-invalid="true"]:focus,
+.field select[aria-invalid="true"]:focus {
+  border-color: var(--danger);
+  outline-color: var(--danger);
+}
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -1345,6 +1364,12 @@ textarea:focus-visible, select:focus-visible {
 .sarge-input button:disabled { background: var(--asphalt-3); color: var(--concrete-1); cursor: not-allowed; }
 
 /* Sarge estimate-form view */
+/* Layout lives here rather than inline: as an inline style it outranked the
+   `is-hidden` class the script toggles, so the chat view and its input bar
+   stayed on screen behind the estimate form. */
+.sarge-chat-view { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.sarge-chat-view.is-hidden { display: none; }
+
 .sarge-form-view {
   display: none; flex-direction: column; gap: 12px;
   padding: 16px; overflow-y: auto;

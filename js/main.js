@@ -266,6 +266,7 @@
   /* ----------- CONTACT FORM ----------- */
   const contactForm = document.getElementById('estimate-form');
   if (contactForm) {
+    window.STSForms?.watch(contactForm);
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submit = contactForm.querySelector('button[type=submit]');
@@ -276,7 +277,20 @@
       // Honeypot
       if (fd.get('_gotcha')) return;
 
+      if (contactForm.dataset.submitting === 'true') return;
+
+      // The form carries `novalidate`, so nothing was checking the required
+      // name and phone before this — blank leads could be submitted.
+      if (window.STSForms && !window.STSForms.validate(contactForm)) {
+        if (errorEl) {
+          errorEl.classList.add('is-active');
+          errorEl.textContent = 'Please fix the highlighted fields and try again.';
+        }
+        return;
+      }
+
       if (errorEl) errorEl.classList.remove('is-active');
+      contactForm.dataset.submitting = 'true';
       submit.disabled = true;
       const originalLabel = submit.innerHTML;
       submit.innerHTML = 'SENDING…';
@@ -295,6 +309,7 @@
           errorEl.innerHTML = 'Submission hiccup. Call or text us directly at <a href="tel:7169078259" style="color:var(--yellow)">716-907-8259</a> or email <a href="mailto:Seal.Team.Six.Snow@gmail.com" style="color:var(--yellow)">Seal.Team.Six.Snow@gmail.com</a>.';
         }
       } finally {
+        delete contactForm.dataset.submitting;
         submit.disabled = false;
         submit.innerHTML = originalLabel;
       }
