@@ -460,7 +460,7 @@ window.SARGE_KB = [
     id: 'kb-105', category: 'commercial', routeToForm: true,
     question: 'Do you do commercial parking lots?',
     keywords: ['commercial parking lot', 'commercial sealcoating', 'business lot', 'commercial lot'],
-    answer: "Yes — storefronts, plazas, auto shops, multi-tenant lots. Sealcoating, striping, patching, the works. Drop the property details and we'll get a number to you fast."
+    answer: "Yes — storefronts, plazas, auto shops, multi-tenant lots. Sealcoating, striping, patching, the works. Drop the property details and the owner will put a number together for you."
   },
   {
     id: 'kb-105a', category: 'commercial',
@@ -524,7 +524,7 @@ window.SARGE_KB = [
     id: 'kb-120', category: 'scheduling', routeToForm: true,
     question: 'How do I get an estimate?',
     keywords: ['get estimate', 'free estimate', 'how to get quote', 'estimate', 'quote', 'get a quote'],
-    answer: "Free, no-pressure estimates. Tell me a few details and I'll get the crew to reach out — fastest way is the estimate form right here, takes 30 seconds."
+    answer: "Free, no-pressure estimates. Drop your details on the estimate form right here and the owner will follow up with a written quote."
   },
   {
     id: 'kb-121', category: 'scheduling',
@@ -574,7 +574,7 @@ window.SARGE_KB = [
     id: 'kb-130', category: 'pricing', routeToForm: true,
     question: 'How much does it cost?',
     keywords: ['how much', 'cost', 'price', 'how much does it cost', 'what does it cost', 'pricing'],
-    answer: "Fair question, recruit — but every job's different. Price depends on the size, the condition, how many cracks need filling, and which services you want. Fastest way to a real number is a quick free estimate."
+    answer: "Fair question, recruit — but every job's different. Price depends on the size, the condition, how many cracks need filling, and which services you want. The only way to a real number is a free estimate — the owner looks at the job and puts it in writing."
   },
   {
     id: 'kb-131', category: 'pricing', routeToForm: true,
@@ -586,13 +586,13 @@ window.SARGE_KB = [
     id: 'kb-132', category: 'pricing', routeToForm: true,
     question: 'What does parking lot striping cost?',
     keywords: ['striping cost', 'parking lot striping price', 'cost to stripe', 'striping price', 'cost of striping'],
-    answer: "Depends on the number of stalls, layout, ADA work, and whether it's new or a re-stripe. Free estimate gets you a real figure fast."
+    answer: "Depends on the number of stalls, layout, ADA work, and whether it's new or a re-stripe. A free estimate gets you a real figure in writing."
   },
   {
     id: 'kb-133', category: 'pricing', routeToForm: true,
     question: 'Can you give me a quote or ballpark?',
     keywords: ['ballpark', 'rough estimate', 'rough number', 'rough price', 'rough cost', 'ball park'],
-    answer: "I keep it honest — no guessing on price. Two minutes on the estimate form and the crew will get you an accurate quote."
+    answer: "I keep it honest — no guessing on price. Fill out the estimate form and the owner will get you an accurate quote."
   },
   {
     id: 'kb-134', category: 'pricing', routeToForm: true,

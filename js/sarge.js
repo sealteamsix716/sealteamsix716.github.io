@@ -174,7 +174,7 @@ function handleUserInput(text) {
   if (PRICE_REGEX.test(trimmed)) {
     respondAndRoute({
       answer:
-        "Fair question, recruit — but every job's different. Price depends on size, condition, prep, and which services you want. I won't throw out a number that's wrong. Two minutes on the estimate form and the crew will get you an accurate quote.",
+        "Fair question, recruit — but every job's different. Price depends on size, condition, prep, and which services you want. I won't throw out a number that's wrong, and I can't quote one myself — every estimate comes from the owner. Drop your details on the estimate form and he'll get you an accurate quote in writing.",
     });
     return;
   }
