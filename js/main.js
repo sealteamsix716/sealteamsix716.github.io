@@ -37,49 +37,50 @@
   }
 
   /* ----------- BEFORE / AFTER SLIDER ----------- */
-  // Pairs come from the design comp + image inventory.
+  // Photo pairs are registered onto a common viewpoint by
+  // scripts/align_before_after.py, so dragging the handle changes the pavement
+  // rather than jumping between two different camera positions.
+  const BA_WEBP = (() => {
+    try {
+      const c = document.createElement('canvas');
+      return !!(c.toDataURL && c.toDataURL('image/webp').indexOf('data:image/webp') === 0);
+    } catch (err) { return false; }
+  })();
+  const BA_EXT = BA_WEBP ? 'webp' : 'jpg';
+
   const BA_PAIRS = [
     {
-      key: 'garage',
-      label: 'YELLOW HOUSE · CLARENCE',
-      before: 'images/residential-garage-driveway-before.jpg',
-      after: 'images/residential-garage-driveway-after.jpg',
-      caption: 'Residential driveway · 2-car · faded asphalt → 2-coat premium seal',
-      jobId: 'STS-2025-0142',
-      location: 'CLARENCE, NY',
-      turn: '1 DAY',
+      key: 'residential-drive',
+      label: 'RESIDENTIAL DRIVEWAY',
+      base: 'images/ba/residential-driveway-clarence',
+      caption: 'Residential driveway · faded and patched → fresh two-coat seal',
+      service: 'DRIVEWAY SEALCOAT',
+      area: 'WESTERN NEW YORK',
+      surface: 'RESIDENTIAL ASPHALT',
     },
     {
       key: 'autoshop',
-      label: 'AUTO SHOP · BUFFALO',
-      before: 'images/auto-shop-parking-lot-before.jpg',
-      after: 'images/auto-shop-parking-lot-after.jpg',
-      caption: 'Commercial parking lot · cracked & faded → crack-filled, sealed, re-striped',
-      jobId: 'STS-2025-0089',
-      location: 'BUFFALO, NY',
-      turn: '2 DAYS',
+      label: 'AUTO SHOP LOT',
+      base: 'images/ba/auto-shop-lot',
+      caption: 'Commercial lot · cracked and faded → crack-filled and sealed',
+      service: 'COMMERCIAL SEALCOAT',
+      area: 'WESTERN NEW YORK',
+      surface: 'COMMERCIAL LOT',
     },
     {
       key: 'country',
-      label: 'COUNTRY DRIVE · WNY',
-      before: 'images/country-driveway-sealcoating-before.jpg',
-      after: 'images/country-driveway-sealcoating-after.jpg',
+      label: 'COUNTRY DRIVEWAY',
+      base: 'images/ba/country-driveway',
       caption: 'Long rural driveway · weathered → restored deep-black finish',
-      jobId: 'STS-2024-0211',
-      location: 'EAST AURORA, NY',
-      turn: '1 DAY',
-    },
-    {
-      key: 'parking',
-      label: 'COMMERCIAL LOT · ADA',
-      before: 'images/parking-lot-striping-before.jpg',
-      after: 'images/parking-lot-striping-after.jpg',
-      caption: 'Faded ADA lot → fresh sealcoat + crisp ADA-compliant striping',
-      jobId: 'STS-2025-0167',
-      location: 'AMHERST, NY',
-      turn: '1 DAY',
+      service: 'DRIVEWAY SEALCOAT',
+      area: 'WESTERN NEW YORK',
+      surface: 'RURAL ASPHALT',
     },
   ];
+  // Retired: the old "yellow house" pair was 720x540 and its two frames share
+  // only 3 matching features — they were never the same viewpoint, which is
+  // what made the handle feel wrong. The old "commercial lot · ADA" pair was
+  // not a before/after at all: its "before" already had fresh striping down.
 
   const baSlider = document.querySelector('.ba-slider');
   if (baSlider) {
@@ -138,22 +139,26 @@
       });
     }
 
+    const applySrc = (img, pair, side) => {
+      if (!img) return;
+      const stem = `${pair.base}-${side}`;
+      img.srcset = `${stem}-800.${BA_EXT} 800w, ${stem}-1600.${BA_EXT} 1600w`;
+      img.sizes = '(max-width: 900px) 100vw, 960px';
+      img.src = `${stem}-1600.${BA_EXT}`;
+    };
+
     const setActive = (idx) => {
       const pair = BA_PAIRS[idx];
       if (!pair) return;
       activeIndex = idx;
-      if (beforeImg) {
-        beforeImg.src = pair.before;
-        beforeImg.alt = `Before — ${pair.caption}`;
-      }
-      if (afterImg) {
-        afterImg.src = pair.after;
-        afterImg.alt = `After — ${pair.caption}`;
-      }
+      applySrc(beforeImg, pair, 'before');
+      applySrc(afterImg, pair, 'after');
+      if (beforeImg) beforeImg.alt = `Before — ${pair.caption}`;
+      if (afterImg) afterImg.alt = `After — ${pair.caption}`;
       if (captionEl) captionEl.textContent = pair.caption;
-      if (metaJobId) metaJobId.textContent = pair.jobId;
-      if (metaLoc) metaLoc.textContent = pair.location;
-      if (metaTurn) metaTurn.textContent = pair.turn;
+      if (metaJobId) metaJobId.textContent = pair.service;
+      if (metaLoc) metaLoc.textContent = pair.area;
+      if (metaTurn) metaTurn.textContent = pair.surface;
       // dots
       if (dotsEl) {
         dotsEl.innerHTML = '';
@@ -179,7 +184,11 @@
         btn.type = 'button';
         btn.className = 'ba-thumb';
         if (i === 0) btn.classList.add('is-active');
-        btn.innerHTML = `<img src="${p.after}" alt="${p.label}" loading="lazy" /><span class="label">${p.label}</span>`;
+        // A dedicated 480px thumbnail — this used to point at the full-size
+        // "after", so opening the page fetched every pair at display size.
+        btn.innerHTML =
+          `<img src="${p.base}-thumb-480.${BA_EXT}" alt="" width="480" height="360" ` +
+          `loading="lazy" decoding="async" /><span class="label">${p.label}</span>`;
         btn.addEventListener('click', () => setActive(i));
         thumbsHost.appendChild(btn);
       });

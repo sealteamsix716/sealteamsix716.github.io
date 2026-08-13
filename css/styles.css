@@ -1469,6 +1469,19 @@ textarea:focus-visible, select:focus-visible {
   .trust-badges .badge span { font-size: 11px; letter-spacing: .03em; }
   .trust-badges .badge svg { width: 24px; height: 24px; }
   .trust-strip { letter-spacing: .12em; font-size: 11.5px; }
+
+  /* The pairs are 4:3. A 16:9 crop leaves barely 220px of height on a phone,
+     which the chips and caption then fight over — so show the full frame and
+     drop the secondary status lines. */
+  .ba-slider { aspect-ratio: 4 / 3; }
+  .ba-label { top: 12px; padding: 6px 10px; }
+  .ba-label.before { left: 12px; }
+  .ba-label.after { right: 12px; }
+  .ba-label strong { font-size: 13px; padding: 4px 12px 6px; }
+  .ba-label .mil-label-white { display: none; }
+  .ba-caption { padding: 10px 14px; font-size: 12px; }
+  .before-after-meta { gap: 12px 20px; margin-bottom: 8px; }
+  .before-after-meta .col strong { font-size: 15px; margin-top: 2px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 
   /* The crest is wider than the monogram it replaced; drop the tagline so the

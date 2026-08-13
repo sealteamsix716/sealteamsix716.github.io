@@ -394,16 +394,20 @@
         <p class="section-kicker"><span class="brush">Another Job Done Right.</span></p>
       </div>
       <div class="before-after-meta">
-        <div class="col"><div class="mil-label-white">Job ID</div><strong data-ba-jobid>STS-2025-0142</strong></div>
-        <div class="col"><div class="mil-label-white">Location</div><strong data-ba-loc>CLARENCE, NY</strong></div>
-        <div class="col"><div class="mil-label-white">Turnaround</div><strong data-ba-turn>1 DAY</strong></div>
+        <div class="col"><div class="mil-label-white">Service</div><strong data-ba-jobid>DRIVEWAY SEALCOAT</strong></div>
+        <div class="col"><div class="mil-label-white">Area</div><strong data-ba-loc>WESTERN NEW YORK</strong></div>
+        <div class="col"><div class="mil-label-white">Surface</div><strong data-ba-turn>RESIDENTIAL ASPHALT</strong></div>
       </div>
     </div>
 
     <div class="ba-slider">
-      <img class="ba-after" src="images/residential-garage-driveway-after.jpg" alt="After sealcoating" width="2000" height="1500">
+      <!-- Sources are set by js/main.js, which picks WebP and the right width.
+           No src here on purpose: the preload scanner would fetch it before
+           the script could choose, costing every visitor a second copy. The
+           width/height still reserve the box, so nothing shifts. -->
+      <img class="ba-after" alt="" width="1600" height="1200" decoding="async">
       <div class="ba-before-wrap">
-        <img class="ba-before" src="images/residential-garage-driveway-before.jpg" alt="Before sealcoating" width="2000" height="1500">
+        <img class="ba-before" alt="" width="1600" height="1200" decoding="async">
       </div>
 
       <div class="ba-label before">
@@ -535,11 +539,36 @@
 
       <button class="gallery-item" data-cat="COMMERCIAL" data-loc="WNY" tabindex="0">
         <picture>
-          <source srcset="images/commercial-parking-lot-striping-2-800.webp" type="image/webp">
-          <img src="images/commercial-parking-lot-striping-2.jpg" alt="Bold yellow directional arrow striping on a commercial lot" data-full="images/commercial-parking-lot-striping-2-1600.webp" loading="lazy" width="720" height="540">
+          <source srcset="images/ada-stall-layout-striping-1600.webp" type="image/webp" media="(min-width: 900px)">
+          <source srcset="images/ada-stall-layout-striping-800.webp" type="image/webp">
+          <img src="images/ada-stall-layout-striping.jpg" alt="Freshly striped accessible parking stalls with blue ADA hatching and yellow lines" data-full="images/ada-stall-layout-striping-1600.webp" loading="lazy" width="1600" height="841">
         </picture>
         <div class="gallery-item-meta">
-          <div><div class="mil-label">COMMERCIAL · STRIPING</div><strong>Western NY</strong></div>
+          <div><div class="mil-label">COMMERCIAL · ADA STRIPING</div><strong>Western NY</strong></div>
+          <div class="open-ico"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 L11 3 M11 3 L5 3 M11 3 L11 9" stroke="#FFD200" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+        </div>
+      </button>
+
+      <button class="gallery-item" data-cat="RESIDENTIAL" data-loc="WNY" tabindex="0">
+        <picture>
+          <source srcset="images/tree-lined-driveway-sealcoating-1600.webp" type="image/webp" media="(min-width: 900px)">
+          <source srcset="images/tree-lined-driveway-sealcoating-800.webp" type="image/webp">
+          <img src="images/tree-lined-driveway-sealcoating.jpg" alt="Wide tree-lined residential driveway finished in deep black sealer" data-full="images/tree-lined-driveway-sealcoating-1600.webp" loading="lazy" width="1600" height="1200">
+        </picture>
+        <div class="gallery-item-meta">
+          <div><div class="mil-label">RESIDENTIAL</div><strong>Western NY</strong></div>
+          <div class="open-ico"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 L11 3 M11 3 L5 3 M11 3 L11 9" stroke="#FFD200" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+        </div>
+      </button>
+
+      <button class="gallery-item" data-cat="LUXURY,RESIDENTIAL" data-loc="WNY" tabindex="0">
+        <picture>
+          <source srcset="images/luxury-estate-driveway-sealcoating-1600.webp" type="image/webp" media="(min-width: 900px)">
+          <source srcset="images/luxury-estate-driveway-sealcoating-800.webp" type="image/webp">
+          <img src="images/luxury-estate-driveway-sealcoating.jpg" alt="Brick estate home with a freshly sealed jet-black driveway" data-full="images/luxury-estate-driveway-sealcoating-1600.webp" loading="lazy" width="1600" height="1200">
+        </picture>
+        <div class="gallery-item-meta">
+          <div><div class="mil-label">LUXURY · ESTATE</div><strong>Western NY</strong></div>
           <div class="open-ico"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 L11 3 M11 3 L5 3 M11 3 L11 9" stroke="#FFD200" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
         </div>
       </button>
@@ -1027,7 +1056,9 @@
   <button class="lightbox-close" type="button" aria-label="Close">×</button>
   <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous">‹</button>
   <button class="lightbox-nav lightbox-next" type="button" aria-label="Next">›</button>
-  <img src="" alt="" loading="lazy">
+  <!-- No src until a photo is opened: an empty src makes the browser re-request
+       the page itself on every load. -->
+  <img alt="" loading="lazy">
   <div class="lightbox-meta">
     <div class="mil-label"></div>
     <strong></strong>
