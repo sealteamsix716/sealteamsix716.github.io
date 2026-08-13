@@ -51,7 +51,7 @@
       "name": "Seal Team Six Sealcoating & Striping",
       "url": "https://sealteamsix716.github.io/",
       "image": "https://sealteamsix716.github.io/assets/og-image.jpg",
-      "logo": "https://sealteamsix716.github.io/assets/favicon-512.png",
+      "logo": "https://sealteamsix716.github.io/images/brand/shield-720.png",
       "telephone": "+1-716-907-8259",
       "email": "Seal.Team.Six.Snow@gmail.com",
       "priceRange": "$$",
@@ -105,7 +105,10 @@
   <div class="hazard-thin nav-strip"></div>
   <div class="nav-inner">
     <a class="nav-logo" href="#top" aria-label="Seal Team Six home">
-      <span class="logo-mark"><span>STS</span></span>
+      <picture>
+        <source srcset="images/brand/crest-240.webp" type="image/webp">
+        <img class="logo-crest" src="images/brand/crest-240.png" alt="" width="240" height="123" decoding="async">
+      </picture>
       <span class="logo-text">
         <strong>Seal Team Six</strong>
         <small>Sealcoating · Striping</small>
@@ -222,24 +225,74 @@
   </div>
 </section>
 
-<!-- ============================================================ TRUST BAR ============================================================ -->
-<section class="trust-bar" aria-label="Trust signals">
+<!-- ============================================================ TRUST BAR ============================================================
+     Badge row carried over verbatim from the crew's own flyers so the site
+     reads as the same brand to anyone who has seen the printed material. -->
+<section class="trust-bar" aria-label="Why customers choose Seal Team Six">
   <div class="trust-bar-inner">
-    <div class="item"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8 L7 13 L14 4" stroke="#FFD200" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Locally Owned</span></div>
-    <span class="sep" aria-hidden="true"></span>
-    <div class="item"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8 L7 13 L14 4" stroke="#FFD200" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Since 2022</span></div>
-    <span class="sep" aria-hidden="true"></span>
-    <div class="item"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8 L7 13 L14 4" stroke="#FFD200" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Free Estimates</span></div>
-    <span class="sep" aria-hidden="true"></span>
-    <div class="item"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8 L7 13 L14 4" stroke="#FFD200" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Residential + Commercial</span></div>
-    <span class="sep" aria-hidden="true"></span>
-    <div class="item"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8 L7 13 L14 4" stroke="#FFD200" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>ADA Striping</span></div>
+    <div class="trust-brand">
+      <picture>
+        <source srcset="images/brand/shield-360.webp" type="image/webp">
+        <img src="images/brand/shield-360.png"
+             alt="Seal Team Six emblem — two crew members striping and sealcoating a road"
+             width="360" height="256" decoding="async">
+      </picture>
+    </div>
+
+    <div class="trust-body">
+    <p class="trust-tagline"><span class="brush">Clean. Crisp. Built to Last.</span></p>
+
+    <ul class="trust-badges">
+      <li class="badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2.5 20 5.5v6c0 5-3.4 8.6-8 10.1-4.6-1.5-8-5.1-8-10.1v-6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M8.2 11.8 11 14.6l5-5.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Professional <br>Service</span>
+      </li>
+      <li class="badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="m9 8.9 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.6 14.4 7 22l5-2.4L17 22l-1.6-7.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        <span>Quality <br>You Can See</span>
+      </li>
+      <li class="badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M3 18h13M6 18v-4h7l2 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="20" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="15" cy="20" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13 14V7h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 4h2v3h-2z" fill="currentColor"/>
+        </svg>
+        <span>Built to Last. <br>Done Right.</span>
+      </li>
+      <li class="badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 3v18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M4 4.5h16v9H4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M4 7.5h16M4 10.5h16M11 4.5v9" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        <span>Local. Reliable. <br>Buffalo Proud.</span>
+      </li>
+    </ul>
+    </div>
   </div>
+
+  <p class="trust-strip">
+    <span class="ph">Free Estimates</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <span class="ph">Competitive Rates</span>
+    <span class="dot" aria-hidden="true">·</span>
+    <span class="ph">Fully Insured</span>
+  </p>
 </section>
 
 <!-- ============================================================ SERVICES ============================================================ -->
 <section id="services" class="section services">
-  <div class="road-divider" aria-hidden="true"></div>
+  <!-- No road divider here: the trust bar's torn yellow strip already
+       carries the transition into this section. -->
   <div class="section-inner">
     <div class="section-head">
       <div>
@@ -338,6 +391,7 @@
       <div>
         <div class="mil-label">↓ Section 02 / 06 — Before / After</div>
         <h2 class="display" style="margin-top:14px">See the<br><span class="yellow">Difference.</span></h2>
+        <p class="section-kicker"><span class="brush">Another Job Done Right.</span></p>
       </div>
       <div class="before-after-meta">
         <div class="col"><div class="mil-label-white">Job ID</div><strong data-ba-jobid>STS-2025-0142</strong></div>
@@ -353,12 +407,12 @@
       </div>
 
       <div class="ba-label before">
-        <div class="mil-label-white">STATUS</div>
-        <strong>▲ BEFORE</strong>
+        <strong class="brush brush-pale">Before</strong>
+        <div class="mil-label-white">Status</div>
       </div>
       <div class="ba-label after">
-        <div class="mil-label-white">STATUS</div>
-        <strong>★ MISSION COMPLETE</strong>
+        <strong class="brush">After</strong>
+        <div class="mil-label-white">★ Mission Complete</div>
       </div>
 
       <div class="ba-handle">
@@ -517,6 +571,12 @@
 
 <!-- ============================================================ WHY US ============================================================ -->
 <section id="why-us" class="section why-us">
+  <!-- The crew from the emblem, reused as a watermark so the two figures
+       carry through the page rather than living only in the logo. -->
+  <div class="crew-watermark" aria-hidden="true">
+    <img src="images/brand/worker-striper-silhouette.webp" alt="" loading="lazy" width="358" height="412">
+    <img src="images/brand/worker-sprayer-silhouette.webp" alt="" loading="lazy" width="406" height="363">
+  </div>
   <div class="section-inner">
     <span class="why-bg-num" aria-hidden="true">06</span>
 
@@ -741,6 +801,12 @@
 
 <!-- ============================================================ CTA BAND ============================================================ -->
 <section class="cta-band" aria-labelledby="cta-heading">
+  <!-- The emblem crew flanking the call to action — the one place they read
+       as figures rather than as a faint texture. -->
+  <div class="crew-flank" aria-hidden="true">
+    <img src="images/brand/worker-striper-silhouette.webp" alt="" loading="lazy" width="358" height="412">
+    <img src="images/brand/worker-sprayer-silhouette.webp" alt="" loading="lazy" width="406" height="363">
+  </div>
   <div class="cta-band-inner">
     <h2 id="cta-heading">Ready to <span class="yellow">Lock It Down?</span></h2>
     <p>Free estimate, zero pressure. Written quote in your inbox — usually within 24 hours.</p>
@@ -758,6 +824,10 @@
       <div class="left">
         <div class="mil-label">↓ Section 06 / 06 — Request Intel</div>
         <h2 class="display" style="margin-top:14px">Lock It<br><span class="yellow">Down.</span></h2>
+        <p class="section-kicker section-kicker-stack">
+          <span class="brush">Protect Your Pavement.</span>
+          <span class="brush">Boost Your Property.</span>
+        </p>
         <p>Free estimate. Zero pressure. We'll walk the property, measure the work, and email you a written quote — usually within 24 hours.</p>
 
         <a class="contact-phone-block" href="tel:7169078259">
@@ -880,15 +950,18 @@
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-logo-block">
-        <div class="top">
-          <span class="logo-mark" style="width:52px;height:52px"><span style="font-size:19px">STS</span></span>
-          <div>
-            <strong>Seal Team Six</strong>
-            <small>Sealcoating · Striping</small>
-          </div>
-        </div>
+        <picture>
+          <source srcset="images/brand/shield-360.webp" type="image/webp">
+          <img class="footer-shield" src="images/brand/shield-360.png"
+               alt="Seal Team Six shield logo — two crew members striping and sealcoating a road"
+               width="360" height="256" loading="lazy" decoding="async">
+        </picture>
+        <picture>
+          <source srcset="images/brand/script-wordmark-480.webp" type="image/webp">
+          <img class="footer-script" src="images/brand/script-wordmark-480.png" alt=""
+               width="480" height="258" loading="lazy" decoding="async">
+        </picture>
         <p>Owner-operated asphalt sealcoating, crack filling, line striping and winter services. Buffalo + Western New York.</p>
-        <img class="footer-mascot" src="images/mascot-v4-240.webp" alt="Sarge saluting" loading="lazy" width="240" height="240">
         <div class="footer-socials">
           <a href="https://www.facebook.com/SealTeamSix.716" target="_blank" rel="noopener" aria-label="Facebook">f</a>
           <a href="tel:7169078259" aria-label="Call us">
@@ -933,6 +1006,7 @@
         <h4>Direct Channel</h4>
         <a href="tel:7169078259" style="text-decoration:none;color:inherit"><strong>716-907-8259</strong></a>
         <div class="email">Seal.Team.Six.Snow<br>@gmail.com</div>
+        <img class="footer-mascot" src="images/mascot-v4-240.webp" alt="Sarge, the Seal Team Six mascot, saluting" loading="lazy" width="240" height="240">
         <a class="btn btn-primary" href="#contact" data-sarge-open="form">FREE ESTIMATE <span class="arrow-r" aria-hidden="true"></span></a>
       </div>
     </div>
