@@ -1277,9 +1277,16 @@ textarea:focus-visible, select:focus-visible {
   display: block; font-family: var(--f-display); font-weight: 700; font-size: 16px;
   color: var(--road-white); text-transform: uppercase; letter-spacing: .04em;
 }
+/* Tracking is tighter than the other mono labels on purpose: this status line
+   is long, and the header shares its width with the avatar and close button,
+   so at .18em it wrapped "HRS" onto a second line. */
 .sarge-panel-head .title small {
   font-family: var(--f-mono); font-size: 10px; color: var(--hi-vis);
-  letter-spacing: .18em; display: block; margin-top: 2px;
+  letter-spacing: .07em; display: block; margin-top: 2px;
+  white-space: nowrap;
+}
+@media (max-width: 400px) {
+  .sarge-panel-head .title small { font-size: 9px; letter-spacing: .04em; }
 }
 .sarge-panel-head .close {
   background: transparent; border: 0; color: var(--concrete-2);
