@@ -730,26 +730,26 @@
         <p>We service the entire Buffalo metro area and surrounding suburbs. If your driveway is in WNY, we'll get to it. Not sure if you're in range? Send us your ZIP — we'll confirm same day.</p>
 
         <div class="town-wall">
-          <span class="town-pill is-hq">Buffalo</span>
-          <span class="town-pill">Clarence</span>
-          <span class="town-pill">Amherst</span>
-          <span class="town-pill">Williamsville</span>
-          <span class="town-pill">Tonawanda</span>
-          <span class="town-pill">Cheektowaga</span>
-          <span class="town-pill">West Seneca</span>
-          <span class="town-pill">Lancaster</span>
-          <span class="town-pill">Depew</span>
-          <span class="town-pill">Orchard Park</span>
-          <span class="town-pill">Hamburg</span>
-          <span class="town-pill">East Aurora</span>
-          <span class="town-pill">Lockport</span>
-          <span class="town-pill">Niagara Falls</span>
-          <span class="town-pill">Grand Island</span>
-          <span class="town-pill">Kenmore</span>
-          <span class="town-pill">Snyder</span>
-          <span class="town-pill">Eggertsville</span>
-          <span class="town-pill">Getzville</span>
-          <span class="town-pill">Akron</span>
+          <span class="town-pill is-hq" data-town="buffalo">Buffalo</span>
+          <span class="town-pill" data-town="clarence">Clarence</span>
+          <span class="town-pill" data-town="amherst">Amherst</span>
+          <span class="town-pill" data-town="williamsville">Williamsville</span>
+          <span class="town-pill" data-town="tonawanda">Tonawanda</span>
+          <span class="town-pill" data-town="cheektowaga">Cheektowaga</span>
+          <span class="town-pill" data-town="west-seneca">West Seneca</span>
+          <span class="town-pill" data-town="lancaster">Lancaster</span>
+          <span class="town-pill" data-town="depew">Depew</span>
+          <span class="town-pill" data-town="orchard-park">Orchard Park</span>
+          <span class="town-pill" data-town="hamburg">Hamburg</span>
+          <span class="town-pill" data-town="east-aurora">East Aurora</span>
+          <span class="town-pill" data-town="lockport">Lockport</span>
+          <span class="town-pill" data-town="niagara-falls">Niagara Falls</span>
+          <span class="town-pill" data-town="grand-island">Grand Island</span>
+          <span class="town-pill" data-town="kenmore">Kenmore</span>
+          <span class="town-pill" data-town="snyder">Snyder</span>
+          <span class="town-pill" data-town="eggertsville">Eggertsville</span>
+          <span class="town-pill" data-town="getzville">Getzville</span>
+          <span class="town-pill" data-town="akron">Akron</span>
           <span class="town-extra">+ surrounding</span>
         </div>
 
@@ -761,61 +761,146 @@
       </div>
 
       <div class="wny-map" role="img" aria-label="Stylized map showing Buffalo and surrounding WNY service area">
-        <svg viewBox="0 0 600 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs>
-            <pattern id="waterDots" width="6" height="6" patternUnits="userSpaceOnUse">
-              <circle cx="3" cy="3" r="0.6" fill="#34343A"/>
-            </pattern>
-          </defs>
-          <path d="M -20 380 Q 80 350 180 360 L 200 280 L 215 200 L 210 120 L 240 40 L 0 40 L -20 380 Z" fill="url(#waterDots)" opacity="0.6"/>
-          <path d="M -20 380 Q 80 350 180 360 L 200 280 L 215 200 L 210 120 L 240 40" stroke="#FFD200" stroke-width="1.5" fill="none" stroke-dasharray="2 4" opacity="0.5"/>
-          <text x="100" y="160" font-family="JetBrains Mono, monospace" font-size="10" fill="#6B7076" letter-spacing="3" transform="rotate(-72 100 160)">LAKE ERIE</text>
-          <text x="240" y="100" font-family="JetBrains Mono, monospace" font-size="9" fill="#6B7076" letter-spacing="2">NIAGARA RIVER →</text>
-
-          <path d="M 220 380 L 360 280 L 500 240" stroke="#26262B" stroke-width="6" fill="none" stroke-linecap="round"/>
-          <path d="M 220 380 L 360 280 L 500 240" stroke="#34343A" stroke-width="2" fill="none" stroke-dasharray="4 6"/>
-          <text x="380" y="260" font-family="JetBrains Mono, monospace" font-size="8" fill="#6B7076" letter-spacing="2" transform="rotate(-12 380 260)">I-90 →</text>
-
-          <path d="M 260 200 L 280 380" stroke="#26262B" stroke-width="5" fill="none" stroke-linecap="round"/>
-          <path d="M 260 200 L 280 380" stroke="#34343A" stroke-width="1.5" fill="none" stroke-dasharray="3 5"/>
-          <text x="290" y="220" font-family="JetBrains Mono, monospace" font-size="8" fill="#6B7076" letter-spacing="2">I-190</text>
-
-          <circle cx="280" cy="320" r="200" stroke="#FFD200" stroke-width="1" fill="none" stroke-dasharray="2 4" opacity="0.35"/>
-          <circle cx="280" cy="320" r="130" stroke="#FFD200" stroke-width="1" fill="none" stroke-dasharray="2 4" opacity="0.5"/>
-          <circle cx="280" cy="320" r="200" fill="#FFD200" opacity="0.025"/>
-
-          <g>
-            <circle cx="280" cy="320" r="20" fill="#FFD200" opacity="0.15">
-              <animate attributeName="r" values="20;36;20" dur="2.4s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.4;0;0.4" dur="2.4s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="280" cy="320" r="6" fill="#FFD200"/>
-            <circle cx="280" cy="320" r="10" stroke="#FFD200" stroke-width="1" fill="none"/>
-            <text x="290" y="324" font-family="Oswald, sans-serif" font-weight="600" font-size="11" fill="#FFD200" letter-spacing="1.5">BUFFALO · HQ</text>
-          </g>
-          <g><circle cx="380" cy="280" r="4" fill="#F4F4F5"/><text x="390" y="284" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">CLARENCE</text></g>
-          <g><circle cx="340" cy="240" r="4" fill="#F4F4F5"/><text x="350" y="244" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">AMHERST</text></g>
-          <g><circle cx="360" cy="220" r="4" fill="#F4F4F5"/><text x="370" y="224" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">WILLIAMSVILLE</text></g>
-          <g><circle cx="240" cy="240" r="4" fill="#F4F4F5"/><text x="250" y="244" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">TONAWANDA</text></g>
-          <g><circle cx="360" cy="340" r="4" fill="#F4F4F5"/><text x="370" y="344" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">CHEEKTOWAGA</text></g>
-          <g><circle cx="280" cy="420" r="4" fill="#F4F4F5"/><text x="290" y="424" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">HAMBURG</text></g>
-          <g><circle cx="340" cy="400" r="4" fill="#F4F4F5"/><text x="350" y="404" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">ORCHARD PARK</text></g>
-          <g><circle cx="440" cy="320" r="4" fill="#F4F4F5"/><text x="450" y="324" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">LANCASTER</text></g>
-          <g><circle cx="240" cy="140" r="4" fill="#F4F4F5"/><text x="250" y="144" font-family="Oswald, sans-serif" font-size="11" font-weight="600" fill="#F4F4F5" letter-spacing="1.5">NIAGARA FALLS</text></g>
-
-          <g transform="translate(540 40)">
-            <circle cx="0" cy="0" r="20" stroke="#FFD200" stroke-width="1" fill="none" opacity="0.4"/>
-            <path d="M 0 -16 L -4 4 L 0 0 L 4 4 Z" fill="#FFD200"/>
-            <text x="0" y="-22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#FFD200" letter-spacing="1">N</text>
-          </g>
-
-          <g transform="translate(280 320)" opacity="0.6">
-            <line x1="-30" y1="0" x2="-12" y2="0" stroke="#FFD200" stroke-width="1"/>
-            <line x1="12" y1="0" x2="30" y2="0" stroke="#FFD200" stroke-width="1"/>
-            <line x1="0" y1="-30" x2="0" y2="-12" stroke="#FFD200" stroke-width="1"/>
-            <line x1="0" y1="12" x2="0" y2="30" stroke="#FFD200" stroke-width="1"/>
-          </g>
-        </svg>
+        <svg viewBox="0 0 1000 889" preserveAspectRatio="xMidYMid meet" class="wny-svg" aria-hidden="true">
+<defs>
+<pattern id="wnyWater" width="13" height="13" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1" fill="#3E5E6D" opacity=".85"/></pattern>
+<pattern id="wnyHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#4C606A" stroke-width="1" opacity=".16"/></pattern>
+<pattern id="wnyGrid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0 L0 0 0 50" fill="none" stroke="#1C1C21" stroke-width="1"/></pattern>
+<linearGradient id="wnySweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFD200" stop-opacity=".06"/><stop offset="100%" stop-color="#FFD200" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1000" height="889" fill="#131317"/>
+<rect width="1000" height="889" fill="url(#wnyGrid)" opacity=".7"/>
+<path d="M126.2 889.0 L252.4 849.2 L330.1 796.1 L388.3 743.0 L446.6 690.0 L475.7 636.9 L451.5 590.5 L427.2 562.6 L412.6 530.7 L412.6 490.9 L417.5 451.1 L422.3 411.3 L422.3 371.5 L412.6 338.4 L388.3 318.4 L359.2 298.5 L320.4 278.6 L276.7 265.4 L271.8 225.6 L276.7 172.5 L271.8 106.1 L267.0 53.1 L262.1 0.0 L-97.1 -132.7 L-97.1 1021.7 Z" fill="#0C1B24"/>
+<path d="M126.2 889.0 L252.4 849.2 L330.1 796.1 L388.3 743.0 L446.6 690.0 L475.7 636.9 L451.5 590.5 L427.2 562.6 L412.6 530.7 L412.6 490.9 L417.5 451.1 L422.3 411.3 L422.3 371.5 L412.6 338.4 L388.3 318.4 L359.2 298.5 L320.4 278.6 L276.7 265.4 L271.8 225.6 L276.7 172.5 L271.8 106.1 L267.0 53.1 L262.1 0.0 L-97.1 -132.7 L-97.1 1021.7 Z" fill="url(#wnyWater)"/>
+<path d="M0.0 570.6 L126.2 557.3 L271.8 530.7 L388.3 524.1 L364.1 477.7 L330.1 437.9 L301.0 398.1 L276.7 358.3 L262.1 318.4 L247.6 291.9 L257.3 238.8 L267.0 185.8 L260.2 132.7 L252.4 66.3 L247.6 0.0 L-97.1 -132.7 L-97.1 570.6 Z" fill="#0E0E12"/>
+<path d="M0.0 570.6 L126.2 557.3 L271.8 530.7 L388.3 524.1 L364.1 477.7 L330.1 437.9 L301.0 398.1 L276.7 358.3 L262.1 318.4 L247.6 291.9 L257.3 238.8 L267.0 185.8 L260.2 132.7 L252.4 66.3 L247.6 0.0 L-97.1 -132.7 L-97.1 570.6 Z" fill="url(#wnyHatch)"/>
+<path d="M0.0 570.6 L126.2 557.3 L271.8 530.7 L388.3 524.1 L364.1 477.7 L330.1 437.9 L301.0 398.1 L276.7 358.3 L262.1 318.4 L247.6 291.9 L257.3 238.8 L267.0 185.8 L260.2 132.7 L252.4 66.3 L247.6 0.0" fill="none" stroke="#4C606A" stroke-width="1.6" opacity=".8"/>
+<path d="M344.7 307.8 L383.5 331.7 L402.9 371.5 L402.9 411.3 L378.6 444.5 L344.7 457.8 L310.7 431.2 L296.1 384.8 L310.7 338.4 Z" fill="#16161B" stroke="#4C606A" stroke-width="1.4"/>
+<path d="M126.2 889.0 L252.4 849.2 L330.1 796.1 L388.3 743.0 L446.6 690.0 L475.7 636.9 L451.5 590.5 L427.2 562.6 L412.6 530.7 L412.6 490.9 L417.5 451.1 L422.3 411.3 L422.3 371.5 L412.6 338.4 L388.3 318.4 L359.2 298.5 L320.4 278.6 L276.7 265.4 L271.8 225.6 L276.7 172.5 L271.8 106.1 L267.0 53.1 L262.1 0.0" fill="none" stroke="#4C606A" stroke-width="2.2"/>
+<path d="M400.0 524.1 L373.8 464.4 L335.0 398.1 L291.3 331.7 L260.2 278.6 L267.0 212.3 L264.1 132.7 L254.4 0.0" fill="none" stroke="#7A828A" stroke-width="1" stroke-dasharray="7 5" opacity=".5"/>
+<path d="M417.5 796.1 L495.1 703.2 L538.8 636.9 L572.8 577.2 L605.8 530.7 L669.9 497.6 L786.4 471.0 L941.7 457.8" fill="none" stroke="#26262B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M417.5 796.1 L495.1 703.2 L538.8 636.9 L572.8 577.2 L605.8 530.7 L669.9 497.6 L786.4 471.0 L941.7 457.8" fill="none" stroke="#33333A" stroke-width="1.3" stroke-dasharray="7 9"/>
+<path d="M441.7 559.9 L422.3 504.2 L417.5 451.1 L412.6 398.1 L396.1 368.9 L357.3 338.4 L335.0 307.8 L301.0 278.6 L279.6 268.0" fill="none" stroke="#26262B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M441.7 559.9 L422.3 504.2 L417.5 451.1 L412.6 398.1 L396.1 368.9 L357.3 338.4 L335.0 307.8 L301.0 278.6 L279.6 268.0" fill="none" stroke="#33333A" stroke-width="1.3" stroke-dasharray="7 9"/>
+<path d="M432.0 395.4 L500.0 418.0 L558.3 440.5 L590.3 471.0" fill="none" stroke="#26262B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M432.0 395.4 L500.0 418.0 L558.3 440.5 L590.3 471.0" fill="none" stroke="#33333A" stroke-width="1.3" stroke-dasharray="7 9"/>
+<circle cx="438.4" cy="548.8" r="192.3" fill="none" stroke="#FFD200" stroke-width="1" stroke-dasharray="3 7" opacity="0.5"/>
+<text x="310.4" y="676.8" fill="#FFD200" opacity=".7" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" letter-spacing="2">10 MI</text>
+<circle cx="438.4" cy="548.8" r="384.6" fill="none" stroke="#FFD200" stroke-width="1" stroke-dasharray="3 7" opacity="0.5"/>
+<text x="174.4" y="812.8" fill="#FFD200" opacity=".7" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" letter-spacing="2">20 MI</text>
+<circle cx="438.4" cy="548.8" r="576.9" fill="none" stroke="#FFD200" stroke-width="1" stroke-dasharray="3 7" opacity="0.68"/>
+<text x="38.5" y="948.7" fill="#FFD200" opacity=".7" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" letter-spacing="2">30 MI</text>
+<g class="wny-sweep" style="transform-origin:438.4px 548.8px"><path d="M438.4 548.8 L1092.1999999999998 418.03999999999996 L1092.1999999999998 679.56 Z" fill="url(#wnySweep)"/></g>
+<text x="135.9" y="736.4" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="2.5" text-anchor="start" opacity=".75" transform="rotate(-27 135.9 736.4)">LAKE ERIE</text>
+<text x="388.3" y="86.2" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" letter-spacing="2.5" text-anchor="start" opacity=".65">↑ LAKE ONTARIO</text>
+<text x="87.4" y="398.1" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" letter-spacing="2.5" text-anchor="start" opacity=".8">ONTARIO</text>
+<text x="87.4" y="421.9" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" letter-spacing="2.5" text-anchor="start" opacity=".8">CANADA</text>
+<text x="762.1" y="480.3" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" letter-spacing="2.5" text-anchor="start" opacity=".65">I-90</text>
+<text x="367.0" y="329.1" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" letter-spacing="2.5" text-anchor="start" opacity=".65">I-190</text>
+<g class="wny-town" data-town="niagara-falls">
+<circle class="halo" cx="274.6" cy="275.3" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="274.6" cy="275.3" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="274.6" y="259.3" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="middle">NIAGARA FALLS</text>
+</g>
+<g class="wny-town" data-town="lockport">
+<circle class="halo" cx="601.5" cy="172.5" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="601.5" cy="172.5" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="615.5" y="177.5" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">LOCKPORT</text>
+</g>
+<g class="wny-town" data-town="akron">
+<circle class="halo" cx="810.4" cy="370.3" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="810.4" cy="370.3" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="824.4" y="375.3" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">AKRON</text>
+</g>
+<g class="wny-town" data-town="clarence">
+<circle class="halo" cx="716.6" cy="429.0" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="716.6" cy="429.0" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="730.6" y="434.0" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">CLARENCE</text>
+</g>
+<g class="wny-town" data-town="grand-island">
+<circle class="halo" cx="360.0" cy="382.3" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="360.0" cy="382.3" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="346.0" y="374.3" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="end">GRAND ISLAND</text>
+</g>
+<g class="wny-town" data-town="tonawanda">
+<circle class="halo" cx="438.8" cy="418.0" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="438.8" cy="418.0" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="424.8" y="416.0" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="end">TONAWANDA</text>
+</g>
+<g class="wny-town" data-town="amherst">
+<circle class="halo" cx="514.8" cy="426.7" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="514.8" cy="426.7" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="528.8" y="420.7" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">AMHERST</text>
+</g>
+<g class="wny-town" data-town="williamsville">
+<circle class="halo" cx="570.4" cy="447.8" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="570.4" cy="447.8" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="584.4" y="459.8" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">WILLIAMSVILLE</text>
+</g>
+<g class="wny-town" data-town="cheektowaga">
+<circle class="halo" cx="569.0" cy="525.6" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="569.0" cy="525.6" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="555.0" y="530.6" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="end">CHEEKTOWAGA</text>
+</g>
+<g class="wny-town" data-town="lancaster">
+<circle class="halo" cx="675.8" cy="522.7" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="675.8" cy="522.7" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="689.8" y="527.7" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">LANCASTER</text>
+</g>
+<g class="wny-town" data-town="west-seneca">
+<circle class="halo" cx="545.7" cy="610.9" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="545.7" cy="610.9" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="559.7" y="615.9" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">WEST SENECA</text>
+</g>
+<g class="wny-town" data-town="orchard-park">
+<circle class="halo" cx="569.0" cy="706.6" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="569.0" cy="706.6" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="555.0" y="711.6" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="end">ORCHARD PARK</text>
+</g>
+<g class="wny-town" data-town="east-aurora">
+<circle class="halo" cx="692.0" cy="707.4" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="692.0" cy="707.4" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="706.0" y="712.4" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">EAST AURORA</text>
+</g>
+<g class="wny-town" data-town="hamburg">
+<circle class="halo" cx="485.6" cy="775.0" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="485.6" cy="775.0" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="471.6" y="780.0" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="end">HAMBURG</text>
+</g>
+<g class="wny-town is-quiet" data-town="kenmore">
+<circle class="halo" cx="445.0" cy="444.5" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="445.0" cy="444.5" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="431.0" y="458.5" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="end">KENMORE</text>
+</g>
+<g class="wny-town is-quiet" data-town="eggertsville">
+<circle class="halo" cx="511.1" cy="447.0" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="511.1" cy="447.0" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="505.1" y="467.0" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="end">EGGERTSVILLE</text>
+</g>
+<g class="wny-town is-quiet" data-town="snyder">
+<circle class="halo" cx="530.1" cy="446.6" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="530.1" cy="446.6" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="542.1" y="466.6" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">SNYDER</text>
+</g>
+<g class="wny-town is-quiet" data-town="getzville">
+<circle class="halo" cx="545.8" cy="365.9" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="545.8" cy="365.9" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="559.8" y="370.9" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">GETZVILLE</text>
+</g>
+<g class="wny-town is-quiet" data-town="depew">
+<circle class="halo" cx="610.0" cy="515.2" r="15" fill="#FFD200" opacity="0"/>
+<circle class="dot" cx="610.0" cy="515.2" r="4.2" fill="#F4F4F5"/>
+<text class="lbl" x="620.0" y="505.20000000000005" fill="#F4F4F5" font-family="JetBrains Mono, ui-monospace, monospace" font-size="19" letter-spacing="1.4" text-anchor="start">DEPEW</text>
+</g>
+<g class="wny-town is-hq" data-town="buffalo">
+<circle class="pulse" cx="438.4" cy="548.8" r="11" fill="#FFD200" opacity=".3"/>
+<circle cx="438.4" cy="548.8" r="18" fill="none" stroke="#FFD200" stroke-width="1.5" opacity=".85"/>
+<circle class="dot" cx="438.4" cy="548.8" r="7" fill="#FFD200"/>
+<text class="lbl" x="468.4" y="555.8" fill="#FFD200" font-family="JetBrains Mono, ui-monospace, monospace" font-size="21" letter-spacing="2" font-weight="600">BUFFALO · HQ</text>
+</g>
+<g opacity=".55"><path d="M928 106 L936 138 L928 130 L920 138 Z" fill="#7A828A"/><text x="928" y="158" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="16" letter-spacing="2" text-anchor="middle">N</text></g>
+<g opacity=".6"><line x1="556" y1="792" x2="748.2" y2="792" stroke="#7A828A" stroke-width="1.5"/><line x1="556" y1="787" x2="556" y2="797" stroke="#7A828A" stroke-width="1.5"/><line x1="652.1" y1="788" x2="652.1" y2="796" stroke="#7A828A" stroke-width="1.2"/><line x1="748.2" y1="787" x2="748.2" y2="797" stroke="#7A828A" stroke-width="1.5"/><text x="556" y="812" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" letter-spacing="1.5">0</text><text x="748.2" y="812" fill="#7A828A" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" letter-spacing="1.5" text-anchor="middle">10 MILES</text></g>
+</svg>
         <div class="corner-tl"><div class="mil-label">WNY · 716 OPS GRID</div></div>
         <div class="corner-bl">42.8864° N · 78.8784° W</div>
         <div class="corner-br">

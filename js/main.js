@@ -325,6 +325,41 @@
     });
   }
 
+  /* ----------- SERVICE-AREA MAP <-> TOWN LIST ----------- */
+  // The tightly packed inner-ring suburbs are unlabelled dots on the map, so
+  // the town list acts as the legend: pointing at either one lights the pair.
+  const townPills = document.querySelectorAll('.town-pill[data-town]');
+  const townNodes = document.querySelectorAll('.wny-town[data-town]');
+  if (townPills.length && townNodes.length) {
+    const byTown = new Map();
+    const register = (el) => {
+      const key = el.dataset.town;
+      if (!byTown.has(key)) byTown.set(key, []);
+      byTown.get(key).push(el);
+    };
+    townPills.forEach(register);
+    townNodes.forEach(register);
+
+    const light = (key, on) => {
+      (byTown.get(key) || []).forEach((el) => el.classList.toggle('is-lit', on));
+    };
+
+    byTown.forEach((els, key) => {
+      els.forEach((el) => {
+        el.addEventListener('mouseenter', () => light(key, true));
+        el.addEventListener('mouseleave', () => light(key, false));
+      });
+    });
+
+    // Keyboard parity: make the pills focusable and light on focus.
+    townPills.forEach((pill) => {
+      pill.tabIndex = 0;
+      const key = pill.dataset.town;
+      pill.addEventListener('focus', () => light(key, true));
+      pill.addEventListener('blur', () => light(key, false));
+    });
+  }
+
   /* ----------- SCROLLSPY (nav active link) ----------- */
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
   if (navLinks.length && 'IntersectionObserver' in window) {

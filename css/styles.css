@@ -924,11 +924,42 @@ textarea:focus-visible, select:focus-visible {
 }
 
 .wny-map {
-  position: relative; height: 560px;
+  /* Track the SVG's own aspect so the frame never crops the coverage area —
+     a fixed height sliced Niagara Falls and Clarence off on a phone. */
+  position: relative; aspect-ratio: 1000 / 889;
   background: var(--asphalt-0); border: 1px solid var(--asphalt-3);
   overflow: hidden;
 }
 .wny-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* -------- WNY MAP --------
+   Geometry is generated from real coordinates by scripts/make_wny_map.py.
+   Inner-ring suburbs sit ~20px apart at this zoom, so they ride as unlabelled
+   dots until hovered — from the map itself or from the town list beside it. */
+.wny-town .lbl,
+.wny-town .dot,
+.wny-town .halo { transition: opacity .18s ease, r .18s ease, fill .18s ease; }
+.wny-town.is-quiet .lbl { opacity: 0; }
+.wny-town.is-quiet .dot { fill: var(--concrete-2); r: 3.4; }
+
+.wny-town.is-lit .halo { opacity: .18; }
+.wny-town.is-lit .dot { fill: var(--yellow); r: 6; }
+.wny-town.is-lit .lbl { opacity: 1; fill: var(--yellow); }
+
+.wny-sweep { animation: wnySweep 7s linear infinite; }
+@keyframes wnySweep { to { transform: rotate(360deg); } }
+
+.wny-map .pulse { animation: wnyPulse 2.6s ease-out infinite; transform-box: fill-box;
+  transform-origin: center; }
+@keyframes wnyPulse {
+  0%   { transform: scale(1);   opacity: .35; }
+  70%  { transform: scale(2.6); opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* Town list doubles as the map legend. */
+.town-pill { cursor: default; transition: border-color .15s ease, color .15s ease; }
+.town-pill.is-lit { border-color: var(--yellow); color: var(--yellow); }
 .wny-map .corner-tl { position: absolute; top: 16px; left: 16px; }
 .wny-map .corner-bl { position: absolute; bottom: 16px; left: 16px;
   font-family: var(--f-mono); font-size: 10px; color: var(--concrete-1); letter-spacing: .18em;
@@ -1487,6 +1518,17 @@ textarea:focus-visible, select:focus-visible {
   .ba-label strong { font-size: 13px; padding: 4px 12px 6px; }
   .ba-label .mil-label-white { display: none; }
   .ba-caption { padding: 10px 14px; font-size: 12px; }
+
+  /* At phone width the map scales to ~0.4, which would render town labels at
+     about 7px. The pill list carries the names there, so the map keeps only
+     the HQ label plus whichever town is currently lit. */
+  .wny-town:not(.is-hq) .lbl { opacity: 0; }
+  .wny-town.is-lit .lbl { opacity: 1; }
+  .wny-town .dot { r: 5; }
+  /* The HTML corner overlays are fixed-size, so they crowd the smaller frame. */
+  .wny-map .corner-bl { display: none; }
+  .wny-map .corner-br { font-size: 8.5px; letter-spacing: .1em; gap: 5px; }
+  .wny-map .corner-tl .mil-label { font-size: 9px; letter-spacing: .12em; }
   .before-after-meta { gap: 12px 20px; margin-bottom: 8px; }
   .before-after-meta .col strong { font-size: 15px; margin-top: 2px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
