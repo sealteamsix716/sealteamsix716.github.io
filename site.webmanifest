@@ -3,7 +3,8 @@
   "short_name": "Seal Team Six",
   "description": "Driveway sealcoating, crack filling, line striping, and winter services across Buffalo and Western New York.",
   "start_url": "/",
-  "display": "standalone",
+  "_comment": "display is 'browser' on purpose. Browsers only offer to install a site when this is standalone, fullscreen or minimal-ui, and an unexpected 'install this app' prompt is confusing on a local contractor's site — especially with no service worker, so an installed copy would add nothing over a bookmark. The rest of the manifest is kept so the icon and business name still look right if someone saves the site to their home screen deliberately.",
+  "display": "browser",
   "background_color": "#0B0B0D",
   "theme_color": "#0B0B0D",
   "icons": [
