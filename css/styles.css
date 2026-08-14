@@ -226,6 +226,10 @@ textarea:focus-visible, select:focus-visible {
    The nav carries the hexagon crest cropped out of the legacy shield: the
    full mark's banner text is unreadable below ~90px, so the crest pairs with
    the typeset name instead. The complete shield lives in the footer. */
+/* The flex item is the <picture>, not the <img> inside it, so flex-shrink has
+   to go here — otherwise the crest is squeezed to zero width on the narrower
+   desktop widths where the nav row is tight. */
+.nav-logo picture { display: flex; flex: 0 0 auto; }
 .logo-crest {
   height: 40px; width: auto; flex-shrink: 0;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .55));
@@ -287,6 +291,23 @@ textarea:focus-visible, select:focus-visible {
   font-size: 15px; letter-spacing: .04em;
 }
 .nav-cta { font-size: 14px; padding: 12px 22px; }
+
+/* The hamburger switches off at 900px, but the full row does not actually fit
+   until ~1400px — the crest lockup is wider than the monogram it replaced. In
+   between, every item was breaking onto a second line and the bar grew to
+   94px. Keep the items unbreakable and tighten the spacing to close the gap. */
+.nav-links a, .nav-phone-text strong, .nav-cta, .logo-text strong { white-space: nowrap; }
+@media (max-width: 1400px) {
+  .nav-inner { gap: 18px; }
+  .nav-links { gap: 20px; margin-left: 6px; }
+}
+@media (max-width: 1200px) {
+  .logo-text small { display: none; }
+  .nav-links { gap: 15px; }
+  .nav-links a { font-size: 12.5px; letter-spacing: .07em; }
+  .nav-cta { font-size: 13px; padding: 11px 16px; }
+  .logo-crest { height: 34px; }
+}
 
 .nav-toggle {
   display: none; width: 42px; height: 42px;
@@ -1470,11 +1491,18 @@ textarea:focus-visible, select:focus-visible {
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 900px) {
+/* Nav collapses at 930, not 900: even with the row tightened it overflowed the
+   page by up to 27px between 901 and 929px, which put a horizontal scrollbar on
+   the whole document. Must sit after the base .nav-toggle rule to take effect. */
+@media (max-width: 930px) {
   .nav-links { display: none; }
   .nav-phone .nav-phone-text { display: none; }
   .nav-cta { display: none; }
   .nav-toggle { display: flex; }
+  .nav-inner { gap: 16px; }
+}
+
+@media (max-width: 900px) {
   .nav-inner { gap: 16px; }
 
   /* Stack the emblem above the proof points once they no longer sit side by side. */
