@@ -415,8 +415,12 @@ textarea:focus-visible, select:focus-visible {
 }
 .hero-mascot {
   position: absolute; right: clamp(-40px, 2vw, 80px); bottom: 0;
-  width: clamp(280px, 32vw, 540px); pointer-events: none;
-  z-index: 2;
+  width: clamp(280px, 32vw, 540px); aspect-ratio: 1 / 1;
+  background: url("../images/mascot-v2-600.webp") no-repeat center bottom / contain;
+  pointer-events: none;
+  /* Below .hero-inner (z-index 2). They used to tie, so the mascot painted
+     over the hero copy and swallowed the end of every line. */
+  z-index: 1;
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .55));
 }
 .hero-glow-seam {
@@ -1249,9 +1253,13 @@ textarea:focus-visible, select:focus-visible {
 .sarge-launcher:hover { transform: translateY(-2px); }
 
 /* Speech-bubble nudge */
+/* Sits above the launcher, not beside it. The old right:100px assumed a small
+   round button; the launcher is a ~240px pill anchored at right:20px, so the
+   bubble was rendering underneath it and getting clipped. Stacking it means
+   the launcher's width no longer matters. */
 .sarge-nudge {
-  position: fixed; right: 100px; bottom: 38px;
-  z-index: 59;
+  position: fixed; right: 20px; bottom: 98px;
+  z-index: 61;
   max-width: 240px;
   background: var(--asphalt-1); color: var(--road-white);
   border: 1px solid var(--asphalt-3);
@@ -1265,12 +1273,12 @@ textarea:focus-visible, select:focus-visible {
 }
 .sarge-nudge.is-visible { transform: translateY(0) scale(1); opacity: 1; pointer-events: auto; }
 .sarge-nudge::after {
-  content: ''; position: absolute; right: -8px; bottom: 18px;
+  content: ''; position: absolute; right: 42px; bottom: -7px;
   width: 12px; height: 12px;
   background: var(--asphalt-1);
   border-right: 1px solid var(--asphalt-3);
   border-bottom: 1px solid var(--asphalt-3);
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 .sarge-nudge .dismiss {
   position: absolute; top: 4px; right: 6px;
@@ -1482,7 +1490,10 @@ textarea:focus-visible, select:focus-visible {
   .hero-reticle { width: 140px; height: 140px; top: 60px; right: 16px; }
   .hero-corner { left: 24px; top: 80px; }
   .hero-side-label { display: none; }
-  .hero-mascot { right: -10vw; width: 60vw; opacity: .85; }
+  /* Off below 900px. At tablet width and down he overlaps the hero copy, and
+     on a phone the paragraph runs straight across his face. As a background
+     image, display:none also means he is never downloaded here. */
+  .hero-mascot { display: none; }
   .hero-inner { padding-top: 80px; padding-bottom: 60px; }
 }
 
@@ -1499,7 +1510,6 @@ textarea:focus-visible, select:focus-visible {
   .why-bg-num { font-size: 200px; }
   .hero { min-height: 720px; }
   .hero-title { font-size: clamp(48px, 13vw, 80px); }
-  .hero-mascot { width: 70vw; opacity: .55; right: -20vw; }
   .hero-stats { gap: 20px; }
   .trust-badges .badge { padding: 10px 12px; gap: 10px; }
   /* Sized so the longest line ("Local. Reliable.") still clears one row at
@@ -1545,7 +1555,7 @@ textarea:focus-visible, select:focus-visible {
     border-radius: 0; border: 0;
   }
   .sarge-launcher { right: 16px; bottom: 16px; }
-  .sarge-nudge { right: 86px; bottom: 28px; max-width: 200px; }
+  .sarge-nudge { right: 16px; bottom: 94px; max-width: min(220px, calc(100vw - 32px)); }
 }
 
 /* ============================================================

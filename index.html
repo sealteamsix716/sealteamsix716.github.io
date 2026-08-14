@@ -212,10 +212,10 @@
     </div>
   </div>
 
-  <picture>
-    <source srcset="images/mascot-v2-600.webp" type="image/webp">
-    <img class="hero-mascot" src="images/mascot-v2.png" alt="Sarge — the Seal Team Six mascot pointing at the viewer" width="600" height="600" loading="eager" decoding="async" fetchpriority="high">
-  </picture>
+  <!-- Sarge is decoration here, so he is a CSS background rather than an <img>:
+       a display:none background is never fetched, which keeps him off phones
+       entirely instead of downloading an image nobody sees. -->
+  <div class="hero-mascot" aria-hidden="true"></div>
 
   <div class="hero-glow-seam" aria-hidden="true"></div>
   <div class="hero-road-flow" aria-hidden="true"></div>
