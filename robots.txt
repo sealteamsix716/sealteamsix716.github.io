@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sealteamsix716.github.io/sitemap.xml
+Sitemap: https://sealteamsix716.com/sitemap.xml

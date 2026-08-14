@@ -2,7 +2,7 @@
 
 Production website for **Seal Team Six**, owner-operated asphalt sealcoating, crack-filling, and line-striping in Buffalo, NY (Western New York).
 
-🌐 **Live:** https://sealteamsix716.github.io
+🌐 **Live:** https://sealteamsix716.com
 📞 **716-907-8259** · ✉️ Seal.Team.Six.Snow@gmail.com · [Facebook](https://www.facebook.com/SealTeamSix.716)
 
 ## What's in here
