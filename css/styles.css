@@ -1220,6 +1220,19 @@ textarea:focus-visible, select:focus-visible {
 .footer-col a.btn-primary { color: var(--asphalt-0); }
 .footer-col a.btn-ghost { color: var(--road-white); }
 
+/* Fallback office line. Body font rather than the bar's wide-tracked mono so a
+   full sentence stays readable, but sized and coloured to sit well below the
+   main number in the hierarchy — and pointedly not styled as a button. */
+.footer-fallback {
+  margin: 34px 0 0; max-width: 620px;
+  font-size: 12.5px; line-height: 1.6; color: var(--concrete-2);
+}
+.footer-fallback a {
+  color: var(--concrete-3); text-decoration: underline;
+  text-underline-offset: 3px; white-space: nowrap;
+}
+.footer-fallback a:hover { color: var(--road-white); }
+
 .footer-bottom {
   padding-top: 24px; border-top: 1px solid var(--asphalt-3);
   display: flex; justify-content: space-between; align-items: center;
