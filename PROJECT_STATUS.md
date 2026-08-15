@@ -21,14 +21,21 @@ current-state record.
 covering the apex and `www`. Serving over HTTP/2. `https://www.` redirects to
 the apex over HTTPS. No mixed content anywhere on the page.
 
-**One gap remains:** GitHub's `https_enforced` is still `false`. The
-certificate is fine; nothing is *forcing* visitors onto it. Consequences:
+**Enforce HTTPS is on** (enabled 2026-08-15, `https_enforced: true`). Every
+entry point now lands on `https://sealteamsix716.com/`:
 
-- `http://sealteamsix716.com` returns 200 over plain HTTP — no redirect.
-- `https://sealteamsix716.github.io` redirects to **`http://`**, downgrading
-  anyone following an old link.
+| From | Result |
+|---|---|
+| `http://sealteamsix716.com` | 301 → https apex |
+| `http://www.` / `https://www.` | 301 → https apex |
+| `http://sealteamsix716.github.io` | 301 → https apex |
+| `https://sealteamsix716.github.io` | 301 → http apex → 301 → https apex |
 
-Fix is one checkbox: repo Settings → Pages → Enforce HTTPS. Not a code change.
+Two residual notes, neither worth acting on: the old *HTTPS* github.io
+address reaches the site in two hops with a brief plain-HTTP hop in the
+middle — a GitHub Pages quirk, and it self-corrects on the next hop. And
+GitHub Pages sets no `Strict-Transport-Security` header for custom domains,
+which cannot be changed without a server or a proxy in front.
 
 ## 2. Live health — clean
 
@@ -91,18 +98,14 @@ platform, is a genuine advertising-standards problem, not just a content
 to-do. **Recommend: replace with real quotes, or remove the section, before
 any advertising push.** Even two or three genuine reviews would do.
 
-### 4.2 Enforce HTTPS
-
-See §1. One checkbox. Owner action.
-
-### 4.3 Unverified business claims still on the page
+### 4.2 Unverified business claims still on the page
 
 Live and unconfirmed: "Fully Insured" (Dan approved 2026-08-13), "Since
 2022", "24h est. response", "100% owner on-site", "2-coat application",
 "Cures in 24 hrs". These are ordinary contractor claims but each is a promise
 to a customer. Worth a once-over with Justin.
 
-### 4.4 Documentation drift
+### 4.3 Documentation drift
 
 - `CLAUDE.md` still describes the Formspree ID as an unfilled placeholder
   (`FORMSPREE_FORM_ID`); it has been live as `mgoqkqqd` since 2026-08-13.
