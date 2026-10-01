@@ -5,6 +5,11 @@
 > To bring it back, follow **`RESTORE_FULL_SITE.md`** (or tell Claude
 > "restore the full site"). While in this mode, make website changes on
 > `full-site`, not `main` — anything pushed to `main` goes live.
+>
+> **Ship-it override while in this mode:** if Dan says "push", "deploy", "ship
+> it" etc. while on `full-site`, that means `git push origin full-site` ONLY.
+> Skip the global merge-to-main step. Never merge `full-site` into `main` (or
+> `main` into `full-site`) until Dan says "restore the full site".
 
 Project context for Claude Code. Read this in full at the start of every session in this repo.
 
@@ -16,7 +21,7 @@ Marketing website for **Seal Team Six — Sealcoating & Striping**, an owner-ope
 - Live URL: **https://sealteamsix716.github.io**
 - Git remote is already set via SSH alias: `git@github-sealteamsix716:sealteamsix716/sealteamsix716.github.io.git`
 - This local folder **is** the repo (already `git init`'d on `main`).
-- `origin/main` currently holds only an auto-generated `README.md`. **Reconcile it first:** `git fetch origin` then `git checkout -B main origin/main` BEFORE adding new files — otherwise the push will be rejected.
+- Sync before working: `git pull origin main` (on `main`). Do **not** use `git checkout -B main origin/main` — that resets `main` to GitHub and discards any unpushed local commits. (That step was only needed once, during the initial 2026 setup.)
 - `index.html` MUST live at the repo root for Pages to serve it. Keep assets at root level: `/images`, `/css`, `/js`, `/assets`.
 
 ## Approved design — build to match this

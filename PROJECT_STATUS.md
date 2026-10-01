@@ -5,6 +5,11 @@
 > To bring it back, follow **`RESTORE_FULL_SITE.md`** (or tell Claude
 > "restore the full site"). While in this mode, make website changes on
 > `full-site`, not `main` — anything pushed to `main` goes live.
+>
+> **Ship-it override while in this mode:** if Dan says "push", "deploy", "ship
+> it" etc. while on `full-site`, that means `git push origin full-site` ONLY.
+> Skip the global merge-to-main step. Never merge `full-site` into `main` (or
+> `main` into `full-site`) until Dan says "restore the full site".
 
 **Audit date: 2026-08-15.** Every line below was verified against the live
 site or the repository on that date, not carried over from earlier notes.
