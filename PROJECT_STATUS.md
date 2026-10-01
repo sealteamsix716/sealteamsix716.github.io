@@ -1,5 +1,11 @@
 # Project status — Seal Team Six website
 
+> **COMING SOON MODE (since 2026-10-01).** The live site is a plain white
+> "Coming Soon" page. The full website is preserved on the `full-site` branch.
+> To bring it back, follow **`RESTORE_FULL_SITE.md`** (or tell Claude
+> "restore the full site"). While in this mode, make website changes on
+> `full-site`, not `main` — anything pushed to `main` goes live.
+
 **Audit date: 2026-08-15.** Every line below was verified against the live
 site or the repository on that date, not carried over from earlier notes.
 This file supersedes `SEAL_TEAM_6_HANDOFF.md` (last updated 2026-08-12) as the

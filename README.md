@@ -1,5 +1,11 @@
 # Seal Team Six — Sealcoating & Striping
 
+> **COMING SOON MODE (since 2026-10-01).** The live site is a plain white
+> "Coming Soon" page. The full website is preserved on the `full-site` branch.
+> To bring it back, follow **`RESTORE_FULL_SITE.md`** (or tell Claude
+> "restore the full site"). While in this mode, make website changes on
+> `full-site`, not `main` — anything pushed to `main` goes live.
+
 Production website for **Seal Team Six**, owner-operated asphalt sealcoating, crack-filling, and line-striping in Buffalo, NY (Western New York).
 
 🌐 **Live:** https://sealteamsix716.com
